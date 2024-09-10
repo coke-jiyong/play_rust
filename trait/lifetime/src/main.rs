@@ -1,3 +1,5 @@
+
+
 fn main() {
     // let string1 = String::from("long string is long");
 
@@ -19,21 +21,35 @@ fn main() {
     // //                                              매개변수의 라이프타임중 작은 것과 동일하다.
 
 
-    let string1 ;
-    let string2 ;
-    let result;
-    {
-        string1 = String::from("xyz");
-    }
-    {
-        string2 = String::from("long string is long");
-        result = longest(string1.as_str(), string2.as_str());
-    }
+    // let string1 ;
+    // let string2 ;
+    // let result;
+    // {
+    //     string1 = String::from("xyz");
+    // }
+    // {
+    //     string2 = String::from("long string is long");
+    //     result = longest(string1.as_str(), string2.as_str());
+    // }
 
     
 
-    println!("The longest string is {}", result); 
+    // println!("The longest string is {}", result); 
+
+
+    let string1 = String::from("abcd");
+    let string2 = "xyz";
+
+    let result = longest(string1.as_str(), string2);
+    println!("The longest string is {}", result);
 }
+// fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
+//     if x.len() > y.len() {
+//         x
+//     } else {
+//         y
+//     }
+// }
 fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
     if x.len() > y.len() {
         x
@@ -41,3 +57,14 @@ fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
         y
     }
 }
+
+// fn main() {
+//     let x = "test".to_string();
+//     let mut result;
+//     {
+//         let y = "123".to_string();
+//         result = x + &y;
+//     }
+
+//     println!("{}", result);
+// }
